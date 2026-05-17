@@ -3,16 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yoginath | Full Stack Developer</title>
+<title>Yoginath | Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
   background: #0d1117;
   color: #c9d1d9;
 }
 
+/* Header */
 header {
   background: #161b22;
   padding: 20px;
@@ -21,56 +29,113 @@ header {
 
 header h1 {
   color: #58a6ff;
-  margin: 0;
+}
+
+nav {
+  margin-top: 10px;
 }
 
 nav a {
   color: #c9d1d9;
   margin: 0 15px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
+nav a:hover {
+  color: #58a6ff;
+}
+
+/* Sections */
 section {
-  padding: 40px 20px;
-  max-width: 900px;
+  padding: 50px 20px;
+  max-width: 1000px;
   margin: auto;
 }
 
 h2 {
   color: #58a6ff;
+  margin-bottom: 20px;
 }
 
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero p {
+  margin: 10px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #238636;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2ea043;
+}
+
+/* Cards */
 .card {
   background: #161b22;
   padding: 20px;
-  margin: 15px 0;
   border-radius: 10px;
+  margin: 15px 0;
   transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 10px #58a6ff55;
+  box-shadow: 0 0 15px #58a6ff44;
 }
 
-button {
-  background: #238636;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+/* Skills */
+.skill {
+  margin: 10px 0;
 }
 
-button:hover {
-  background: #2ea043;
+.bar {
+  background: #30363d;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
+.bar span {
+  display: block;
+  height: 10px;
+  background: #58a6ff;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background: #161b22;
-  margin-top: 20px;
+}
+
+/* Animation */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
@@ -82,45 +147,94 @@ footer {
   <p>Full Stack Developer | Salesforce Developer</p>
   <nav>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a passionate Full Stack Developer and Salesforce Developer with strong skills in building modern web applications.</p>
+<section class="hero fade">
+  <h1>Hi, I'm Yoginath 👋</h1>
+  <p>I build modern web applications and scalable solutions.</p>
+  <a href="#" class="btn">Download Resume</a>
+  <a href="https://github.com/YOUR-USERNAME" class="btn">GitHub</a>
 </section>
 
-<section id="projects">
+<section id="about" class="fade">
+  <h2>About Me</h2>
+  <p>I am a passionate developer focused on Full Stack and Salesforce technologies. I enjoy solving real-world problems and building impactful solutions.</p>
+</section>
+
+<section id="skills" class="fade">
+  <h2>Skills</h2>
+
+  <div class="skill">
+    <p>HTML</p>
+    <div class="bar"><span style="width: 90%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>JavaScript</p>
+    <div class="bar"><span style="width: 80%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>React</p>
+    <div class="bar"><span style="width: 75%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>Salesforce</p>
+    <div class="bar"><span style="width: 85%"></span></div>
+  </div>
+
+</section>
+
+<section id="projects" class="fade">
   <h2>Projects</h2>
 
   <div class="card">
     <h3>Portfolio Website</h3>
-    <p>Personal website showcasing my skills and projects.</p>
+    <p>Personal responsive website with animations.</p>
+    <a href="#" class="btn">View</a>
   </div>
 
   <div class="card">
     <h3>Full Stack App</h3>
-    <p>Developed a complete web app using frontend and backend technologies.</p>
+    <p>Complete app with frontend and backend.</p>
+    <a href="#" class="btn">View</a>
   </div>
 
   <div class="card">
-    <h3>Salesforce Project</h3>
-    <p>Worked on CRM customization and automation using Salesforce.</p>
+    <h3>Salesforce CRM</h3>
+    <p>Custom CRM automation using Salesforce.</p>
+    <a href="#" class="btn">View</a>
   </div>
 
 </section>
 
-<section id="contact">
+<section id="contact" class="fade">
   <h2>Contact</h2>
   <p>Email: your-email@gmail.com</p>
-  <button onclick="alert('Thanks for reaching out!')">Hire Me</button>
+  <a href="#" class="btn">LinkedIn</a>
 </section>
 
 <footer>
-  <p>© 2026 Yoginath | All Rights Reserved</p>
+  <p>© 2026 Yoginath</p>
 </footer>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  fades.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
